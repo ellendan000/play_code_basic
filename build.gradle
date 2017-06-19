@@ -7,19 +7,24 @@ allprojects {
     }
 
     repositories {
-        jcenter()
+        mavenCentral()
     }
 }
 
 ext {
     jacocoSourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
-    jacococlassDirectories = files(subprojects.sourceSets.main.output)
+    jacocoClassDirectories = files(files(subprojects.sourceSets.main.output).files.collect {
+        fileTree(dir: it, excludes: [
+                'net/shadow/with_spring/entity/*'
+        ])
+    })
+    jacocoClassDirectories = files(subprojects.sourceSets.main.output)
     jacocoExecutionData = files(subprojects.jacocoTestReport.executionData)
 }
 
 task jacocoRootReport(type: JacocoReport, dependsOn: test) {
     sourceDirectories = jacocoSourceDirectories
-    classDirectories = jacococlassDirectories
+    classDirectories = jacocoClassDirectories
     executionData = jacocoExecutionData
 
     reports {
@@ -31,7 +36,7 @@ test.dependsOn(subprojects.test)
 
 jacocoTestCoverageVerification {
     sourceDirectories = jacocoSourceDirectories
-    classDirectories = jacococlassDirectories
+    classDirectories = jacocoClassDirectories
     executionData = jacocoExecutionData
     violationRules {
         rule {
