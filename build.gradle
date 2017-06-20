@@ -15,10 +15,9 @@ ext {
     jacocoSourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
     jacocoClassDirectories = files(files(subprojects.sourceSets.main.output).files.collect {
         fileTree(dir: it, excludes: [
-                'net/shadow/with_spring/entity/*'
+                'net/shadow/*/entity/*'
         ])
     })
-    jacocoClassDirectories = files(subprojects.sourceSets.main.output)
     jacocoExecutionData = files(subprojects.jacocoTestReport.executionData)
 }
 
