@@ -1,0 +1,17 @@
+server:
+  port: 8989
+
+spring:
+  devtools:
+    livereload:
+      enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+
+management:
+  security:
+    enabled: false

@@ -1,0 +1,7 @@
+databaseChangeLog:
+    - include:
+        file: Create_table_user.yaml
+        relativeToChangelogFile: true
+    - include:
+        file: Insert_initial_data_into_table_user.yaml
+        relativeToChangelogFile: true
