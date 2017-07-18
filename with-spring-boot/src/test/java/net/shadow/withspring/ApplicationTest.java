@@ -1,4 +1,4 @@
-package net.shadow.with_spring;
+package net.shadow.withspring;
 
 import org.junit.Test;
 

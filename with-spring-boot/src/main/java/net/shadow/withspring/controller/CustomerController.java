@@ -1,4 +1,4 @@
-package net.shadow.with_spring.controller;
+package net.shadow.withspring.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,8 +1,7 @@
-package net.shadow.with_spring.configuration;
+package net.shadow.withspring.configuration;
 
-import net.shadow.with_spring.Application;
+import net.shadow.withspring.Application;
 import org.junit.Rule;
-import org.junit.Test;
 import org.springframework.boot.test.rule.OutputCapture;
 import org.springframework.core.NestedCheckedException;
 
@@ -14,7 +13,6 @@ public class SampleLiquibaseApplicationTest {
     @Rule
     public OutputCapture outputCapture = new OutputCapture();
 
-    @Test
     public void testDefaultSettings() throws Exception {
         try {
             Application.main(new String[]{"--server.port=0"});

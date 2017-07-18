@@ -1,4 +1,4 @@
-package net.shadow.with_spring.entity;
+package net.shadow.withspring.entity;
 
 public class Customer {
     private String name;
