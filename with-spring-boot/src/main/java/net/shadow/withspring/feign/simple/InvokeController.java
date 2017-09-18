@@ -1,4 +1,4 @@
-package net.shadow.withspring.feign;
+package net.shadow.withspring.feign.simple;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
