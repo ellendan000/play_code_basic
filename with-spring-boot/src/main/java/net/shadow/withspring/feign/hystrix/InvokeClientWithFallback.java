@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "invokeClientWithCallback", url = "localhost:8989/api",
-        fallback = InvokeClientFallback.class)
+//        fallback = InvokeClientFallback.class)
+        fallbackFactory = InvokeClientFallbackFactory.class)
 public interface InvokeClientWithFallback {
 
     @GetMapping("/target/{id}")

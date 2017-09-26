@@ -5,3 +5,4 @@ build/
 *.ipr
 *.iws
 application-prod.yaml
+with-spring-boot/out/

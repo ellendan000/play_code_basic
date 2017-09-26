@@ -15,7 +15,7 @@ public class InvokeWithFallbackController {
      * 即使发生调用异常，也仍正常返回fallback值。无法看见调用失败表象。
      */
     @GetMapping("/failed")
-    public String name() {
+    public String nameFallbackString() {
         return String.format("Hello > [%s]", invokeClient.nameFallbackString(""));
     }
 
