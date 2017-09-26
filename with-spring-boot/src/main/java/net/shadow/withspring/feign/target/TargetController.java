@@ -15,7 +15,7 @@ public class TargetController {
     public String name(@PathVariable String id) {
         boolean flag = Optional.of(id)
                 .orElse("")
-                .length() > 1;
+                .length() > 0;
 
         if (flag) {
             return "EllenDan";
