@@ -1,0 +1,12 @@
+management:
+  security:
+    enabled: true
+    roles: SUPERUSER
+security:
+  basic:
+    enabled: true
+    authorize-mode: role
+  user:
+    name: admin
+    password: secret
+    role: SUPERUSER
