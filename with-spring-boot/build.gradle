@@ -36,6 +36,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-devtools")
     compile("org.liquibase:liquibase-core:3.5.3")
     compile("com.google.guava:guava:19.0")
+    compile('org.projectlombok:lombok:1.16.14')
     runtime("mysql:mysql-connector-java:5.1.36")
     runtime("com.h2database:h2:1.4.196")
     testCompile("org.springframework.boot:spring-boot-starter-test")
