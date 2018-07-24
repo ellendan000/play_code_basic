@@ -1,11 +1,11 @@
-package net.shadow.withspring.feign.target;
+package net.shadow.withspring.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "This id is invalid.")
 public class InvalidIdException extends RuntimeException {
-    InvalidIdException() {
+    public InvalidIdException() {
         super();
     }
 

@@ -1,5 +1,6 @@
-package net.shadow.withspring.feign.hystrix;
+package net.shadow.withspring.controller;
 
+import net.shadow.withspring.feign.InvokeClientWithFallback;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,18 +17,19 @@ public class InvokeWithFallbackController {
      */
     @GetMapping("/failed")
     public String nameFallbackString() {
-        return String.format("Hello > [%s]", invokeClient.nameFallbackString(""));
+        return String.format("Hello > [%s]", invokeClient.nameFallbackString("2"));
     }
 
     /**
      * HystrixRuntimeException：
-     * cause引用FeignException
-     * fallbackException.cause<AssertionError>.cause引用RuntimeException("There is some thing wrong.")
+     * cause引用FeignException;
+     * fallbackException."java.lang.Exception: Throwable caught while executing",
+     * cause引用RuntimeException("There is some thing wrong.")
      */
     @GetMapping("/failed/throw-exception")
     public String nameFallbackException() {
         try {
-            return String.format("Hello > [%s]", invokeClient.nameFallbackException(""));
+            return String.format("Hello > [%s]", invokeClient.nameFallbackException("2"));
         } catch (Exception e) {
             return e.getMessage();
         }

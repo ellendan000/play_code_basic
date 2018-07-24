@@ -1,6 +1,8 @@
 package net.shadow.withspring.feign.hystrix;
 
 import feign.hystrix.FallbackFactory;
+import net.shadow.withspring.exception.InvalidIdException;
+import net.shadow.withspring.feign.InvokeClientWithFallback;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -27,8 +29,9 @@ public class InvokeClientFallbackFactory implements FallbackFactory<InvokeClient
             }
 
             @Override
-            public String nameFallbackException(String id) {
-                throw new RuntimeException("failed: reason is:" + cause.getMessage());
+            public String nameFallbackException(String id) throws InvalidIdException {
+                //FeignException.message
+                throw new InvalidIdException(cause.getMessage());
             }
         };
     }
